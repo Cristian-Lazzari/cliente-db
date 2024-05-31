@@ -1,4 +1,4 @@
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+{{-- <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
         <h4 class="offcanvas-title" id="offcanvasExampleLabel">Gestione Notifiche</h4>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -19,7 +19,7 @@
                                 <button class="accordion-button collapsed fw-bold {{ $orderOrReservation }}" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne-{{ $item->id }}" aria-expanded="false" aria-controls="flush-collapseOne-{{ $item->id }}">
                                     {{ $item->title }}
                                 </button>
-                                {{-- qui bisogna mettere un bottone per reindirizzare alla prenotazione o all'ordine --}}
+                                {{-- qui bisogna mettere un bottone per reindirizzare alla prenotazione o all'ordine -- --- -- -- 
                             </h2>
 
                             <div id="flush-collapseOne-{{ $item->id }}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
@@ -52,4 +52,4 @@
         @endif
     </div>
 </div>
-
+ --}}
