@@ -75,7 +75,7 @@ class ReservationController extends Controller
             Mail::to($data['email'])->send($mail);
 
             $mailAdmin = new confermaPrenotazioneAdmin($newOrder);
-            Mail::to('info@pizzeria-capricciodileo.it')->send($mailAdmin);
+            Mail::to('info@dashboadristorante.it')->send($mailAdmin);
 
 
             return response()->json([

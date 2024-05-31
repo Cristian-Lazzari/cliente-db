@@ -15,29 +15,38 @@
 
     
     <div class="date-top">
-        <h3 class="m-2 upper">{{$month_name[$days[1]->m -1]}}</h3>
+        
+        <h3 class="m-2 upper">{{$month_name[$days[0]->m -1]}}</h3>
         @if ($month_id !== 1) 
-            @if ($days[1]->m !== 1)
+            @if ($days[0]->m !== 1)
                 
-                <a href="{{ route('admin.days.index', ['month' =>$days[1]->m - 1, 'year' =>$days[1]->y, 'month_id' => $month_id - 1]) }}" class="mybtndate s2a c-white ">
-                   < {{$month_name[$days[1]->m - 2]}}
+                <a href="{{ route('admin.days.index', ['month' =>$days[0]->m - 1, 'year' =>$days[0]->y, 'month_id' => $month_id - 1]) }}" class="mybtndate s2a c-white ">
+                    {{$month_name[$days[1]->m - 2]}}
                 </a>
             @else
                 <a href="{{ route('admin.days.index', ['month' =>12, 'year' =>$days[1]->y - 1, 'month_id' => $month_id - 1]) }}" class="mybtndate s2a c-white ">
-                  < {{$month_name[$days[1]->m - 2]}}
+                    @if ($days[1]->m - 2 == -1)
+                        dicembre
+                    @else
+                        {{$month_name[$days[0]->m - 2]}}
+                    @endif
                 </a>
             @endif
             
             
         @endif
-        @if ($month_id !== 12) 
-            @if ($days[1]->m !== 12)   
-                <a href="{{ route('admin.days.index', ['month' =>$days[1]->m + 1, 'year' =>$days[1]->y, 'month_id' => $month_id + 1]) }}" class="mybtndate s2a c-white ">
-                    {{$month_name[$days[1]->m]}} >
+        @if ($month_id !== 12 ) 
+            @if ($days[0]->m !== 12)   
+                <a href="{{ route('admin.days.index', ['month' =>$days[0]->m + 1, 'year' =>$days[0]->y, 'month_id' => $month_id + 1]) }}" class="mybtndate s2a c-white ">
+                    {{$month_name[$days[0]->m]}} 
                 </a>
             @else
-                <a href="{{ route('admin.days.index', ['month' => 1, 'year' =>$days[1]->y + 1, 'month_id' => $month_id + 1]) }}" class="mybtndate s2a c-white ">
-                    {{$month_name[$days[1]->m]}} >
+                <a href="{{ route('admin.days.index', ['month' => 1, 'year' =>$days[0]->y + 1, 'month_id' => $month_id + 1]) }}" class="mybtndate s2a c-white ">
+                    @if ($days[0]->m == 12)
+                        gennaio
+                    @else
+                        {{$month_name[$days[0]->m]}}
+                    @endif
                 </a>
             @endif
 
